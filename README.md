@@ -56,4 +56,5 @@ directorio de salida: la raíz). O arrastra la carpeta con `vercel` desde la ter
 - **Archivos propios:** los documentos son enlaces. Subir archivos directo al portal requiere Firebase Storage
   (plan Blaze) y es una ampliación posible.
 - **Anti-spam:** el formulario tiene un campo trampa. Si recibes basura, activa *Firebase App Check*.
-- **Fuente:** Manrope se carga desde Google Fonts; el sitio funciona con una fuente del sistema si no está disponible.
+- **Estilo:** inspirado en Apple (blanco, bandas gris claro, tarjetas de 28px sin sombra). Los colores y la tipografía viven en las variables de `css/styles.css` (`--accent` es el azul de HumaClear). La fuente es la del sistema (SF Pro en Apple) con Inter como respaldo, cargada desde Google Fonts.
+- **Si el sitio se ve sin estilos en Vercel:** abre el repositorio en GitHub; `index.html`, `css/` y `js/` deben estar en la raíz. Si están dentro de una carpeta, ponla como *Root Directory* en Vercel (Settings > General).
