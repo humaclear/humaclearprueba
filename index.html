@@ -12,8 +12,29 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="css/styles.css">
+  <script>
+  /* Aviso si el JavaScript no llega a ejecutarse (config.js mal pegado, archivos fuera de la raíz, etc.) */
+  (function () {
+    var errs = [];
+    window.addEventListener("error", function (e) { var t = e.target; errs.push(t && t.src ? "No se pudo cargar " + t.src : (e.message || "Error de JavaScript")); }, true);
+    window.addEventListener("unhandledrejection", function (e) { errs.push(String((e.reason && e.reason.message) || e.reason)); });
+    window.addEventListener("load", function () {
+      setTimeout(function () {
+        if (document.documentElement.getAttribute("data-ready")) return;
+        var d = document.createElement("div");
+        d.setAttribute("role", "alert");
+        d.style.cssText = "position:fixed;left:16px;right:16px;bottom:16px;z-index:99;margin:auto;max-width:640px;background:#1d1d1f;color:#fff;padding:14px 18px;border-radius:14px;font:14px/1.45 -apple-system,system-ui,sans-serif";
+        var s = document.createElement("strong"); s.textContent = "La página no terminó de cargar.";
+        var p = document.createElement("div"); p.textContent = errs[0] || "Abre la consola (F12) para ver el detalle.";
+        var h = document.createElement("div"); h.style.opacity = ".75"; h.textContent = "Revisa que js/config.js tenga comillas y comas correctas y que index.html, css/ y js/ estén en la raíz del repositorio.";
+        d.appendChild(s); d.appendChild(p); d.appendChild(h); document.body.appendChild(d);
+      }, 3500);
+    });
+  })();
+  </script>
 </head>
 <body>
 <a class="sr-only" href="#contenido">Saltar al contenido</a>
@@ -84,6 +105,21 @@
             <circle cx="813" cy="303" r="6.5" fill="#b9e769" stroke="#fff" stroke-width="2"/>
           </g>
         </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="section video-section" id="video" hidden aria-label="Video de HumaClear">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Míralo en acción.</h2>
+        <p>Un recorrido corto por cómo se ve HumaClear por dentro.</p>
+      </div>
+      <div class="video-frame">
+        <video id="demoVideo" controls playsinline preload="metadata" poster="assets/humaclear-poster.jpg">
+          <source src="assets/humaclear.mp4" type="video/mp4">
+          <source src="assets/humaclear.webm" type="video/webm">
+        </video>
       </div>
     </div>
   </section>
@@ -177,10 +213,6 @@
     <div class="wrap about">
       <div>
         <h2>RH desde dentro. Tecnología a tu medida.</h2>
-        <div class="founder">
-          <div class="avatar" aria-hidden="true">AC</div>
-          <div><strong>Adrián Carlín</strong><span>Psicólogo y profesional de Recursos Humanos. Fundador de HumaClear.</span></div>
-        </div>
       </div>
       <div class="about-body">
         <p>HumaClear nace de trabajar el día a día de RH: expedientes en carpetas, encuestas en hojas de cálculo y la misma información capturada una y otra vez. Eso retrasa entregas y vuelve difícil consultar lo que ya se sabe.</p>

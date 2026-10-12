@@ -5,13 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Portal de clientes | HumaClear</title>
   <meta name="robots" content="noindex">
-  <meta name="theme-color" content="#293a73">
+  <meta name="theme-color" content="#ffffff">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
+  <link rel="modulepreload" href="https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js">
+  <link rel="modulepreload" href="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js">
+  <link rel="modulepreload" href="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-lite.js">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/app.css">
+  <script>
+  /* Aviso si el JavaScript no llega a ejecutarse (config.js mal pegado, archivos fuera de la raíz, etc.) */
+  (function () {
+    var errs = [];
+    window.addEventListener("error", function (e) { var t = e.target; errs.push(t && t.src ? "No se pudo cargar " + t.src : (e.message || "Error de JavaScript")); }, true);
+    window.addEventListener("unhandledrejection", function (e) { errs.push(String((e.reason && e.reason.message) || e.reason)); });
+    window.addEventListener("load", function () {
+      setTimeout(function () {
+        if (document.documentElement.getAttribute("data-ready")) return;
+        var d = document.createElement("div");
+        d.setAttribute("role", "alert");
+        d.style.cssText = "position:fixed;left:16px;right:16px;bottom:16px;z-index:99;margin:auto;max-width:640px;background:#1d1d1f;color:#fff;padding:14px 18px;border-radius:14px;font:14px/1.45 -apple-system,system-ui,sans-serif";
+        var s = document.createElement("strong"); s.textContent = "La página no terminó de cargar.";
+        var p = document.createElement("div"); p.textContent = errs[0] || "Abre la consola (F12) para ver el detalle.";
+        var h = document.createElement("div"); h.style.opacity = ".75"; h.textContent = "Revisa que js/config.js tenga comillas y comas correctas y que index.html, css/ y js/ estén en la raíz del repositorio.";
+        d.appendChild(s); d.appendChild(p); d.appendChild(h); document.body.appendChild(d);
+      }, 3500);
+    });
+  })();
+  </script>
 </head>
 <body>
   <div id="root"><div class="boot"><div><div class="spinner"></div>Cargando tu portal…</div></div></div>

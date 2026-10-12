@@ -58,3 +58,10 @@ directorio de salida: la raíz). O arrastra la carpeta con `vercel` desde la ter
 - **Anti-spam:** el formulario tiene un campo trampa. Si recibes basura, activa *Firebase App Check*.
 - **Estilo:** inspirado en Apple (blanco, bandas gris claro, tarjetas de 28px sin sombra). Los colores y la tipografía viven en las variables de `css/styles.css` (`--accent` es el azul de HumaClear). La fuente es la del sistema (SF Pro en Apple) con Inter como respaldo, cargada desde Google Fonts.
 - **Si el sitio se ve sin estilos en Vercel:** abre el repositorio en GitHub; `index.html`, `css/` y `js/` deben estar en la raíz. Si están dentro de una carpeta, ponla como *Root Directory* en Vercel (Settings > General).
+
+
+## Video (opcional)
+Para mostrar un video en el sitio, coloca en la carpeta `assets/` el archivo `humaclear.mp4` (y, si quieres, `humaclear.webm` y una imagen de portada `humaclear-poster.jpg`). La sección "Míralo en acción" aparece sola cuando el archivo existe; si no, queda oculta.
+
+## Antes de actualizar
+Al reemplazar archivos en GitHub, conserva tu `js/config.js` con tus datos de Firebase.
